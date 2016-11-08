@@ -8,6 +8,7 @@ import Sorting.{MergeSort, QuickSort}
   * <p>
   * @author Connor
   */
+//test ssh
 object Main extends Cloneable {
   val SEPARATOR = "=============================="
   val TAB = "\t"
