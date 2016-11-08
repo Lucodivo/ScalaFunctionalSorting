@@ -1,9 +1,11 @@
+package Sorting
+
 /**
-  * Created by Connor on 10/22/2016.
+  * @author Connor
   */
 class QuickSort extends Sort {
 
-  override def imperativeSort(xs: Array[Int]): Unit = {
+  override def imperativeSort(xs: Array[Int]): Array[Int] = {
     def swap(i: Int, j: Int): Unit = {
       val t = xs(i)
       xs(i) = xs(j)
@@ -40,6 +42,8 @@ class QuickSort extends Sort {
       }
     }
     qSort(0,(xs.length - 1))
+
+    xs
   }
 
   override def functionalSort(xs: Array[Int]): Array[Int] = {

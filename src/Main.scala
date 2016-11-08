@@ -1,44 +1,56 @@
+import Sorting.{MergeSort, QuickSort}
+
 /**
-  * Created by Connor on 10/22/2016.
+  * Main Driver
+  * 1. Using Merge & Quick Sorting.Sort by
+  * <p>
+  * imperative and functional approaches
+  * <p>
+  * @author Connor
   */
-object Main {
+object Main extends Cloneable {
+  val SEPARATOR = "=============================="
+  val TAB = "\t"
   def main(args:Array[String]): Unit = {
+    val unsorted = Array(62,27,97,26,14,13,3,46,79,17,81,36)
 
     val qs = new QuickSort()
-    val unsorted1 = Array(62,27,97,26,14,13,3,46,79,17,81,36)
-    val sorted1 = qs.functionalSort(unsorted1)
-
-    println("Starting Array sorted with functional quicksort")
-    printArray(unsorted1)
-    printArray(sorted1)
-    println()
-
-    println("Starting Array sorted with imperative quicksort")
-    printArray(unsorted1)
-    qs.imperativeSort(unsorted1)
-    printArray(unsorted1)
-    println()
+    val quickFunctional = qs.functionalSort(Array.concat(unsorted))
+    val quickImperative = qs.imperativeSort(Array.concat(unsorted))
 
     val ms = new MergeSort()
-    val unsorted2 = Array(6,7,9,2,4,1,3,6,7,1,8,6)
-    val sorted2 = ms.functionalSort(unsorted2)
+    val mergeFunctional = ms.functionalSort(Array.concat(unsorted))
+    val mergeImperative = ms.imperativeSort(Array.concat(unsorted))
 
-    println("Starting Array sorted with functional mergesort" )
-    printArray(unsorted2)
-    printArray(sorted2)
-    println()
+    println("Quick & Merge Sort by Functional & Imperative approaches")
+    println(SEPARATOR)
 
-    println("Starting Array sorted with imperative mergesort" )
-    printArray(unsorted2)
-    ms.imperativeSort(unsorted2)
-    printArray(unsorted2)
-  }
+    println("Quick Sort")
+    println(SEPARATOR)
 
-  def printArray(xs: Array[Int]): Unit = {
-    for(x <- xs){
-      print(x)
-      print(" ")
-    }
-    println()
+    println("original Array")
+    println(unsorted.deep.mkString(TAB))
+    println("By Functional Approach")
+    println(quickFunctional.deep.mkString(TAB))
+
+    println("original Array")
+    println(unsorted.deep.mkString(TAB))
+    println("By Imperative Approach")
+    println(quickImperative.deep.mkString(TAB))
+    println(SEPARATOR)
+
+    println("Merge Sort")
+    println(SEPARATOR)
+
+    println("original Array")
+    println(unsorted.deep.mkString(TAB))
+    println("By Functional Approach")
+    println(mergeFunctional.deep.mkString(TAB))
+
+    println("original Array")
+    println(unsorted.deep.mkString(TAB))
+    println("By Imperative Approach")
+    println(mergeImperative.deep.mkString(TAB))
+    println(SEPARATOR)
   }
 }

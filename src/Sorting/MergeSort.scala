@@ -1,8 +1,10 @@
+package Sorting
+
 /**
-  * Created by Connor on 10/22/2016.
+  * @author Connor
   */
 class MergeSort extends Sort {
-  override def imperativeSort(xs: Array[Int]): Unit = {
+  override def imperativeSort(xs: Array[Int]): Array[Int] = {
     val tmpMergeArray = Array.fill(xs.length){0}
 
     def merge(l: Int, m: Int, r: Int): Unit = {
@@ -39,6 +41,8 @@ class MergeSort extends Sort {
     }
 
     mSort(0,(xs.length - 1))
+
+    xs
   }
 
   override def functionalSort(xs: Array[Int]): Array[Int] = {
