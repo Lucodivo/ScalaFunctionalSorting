@@ -41,7 +41,7 @@ class QuickSort extends Sort {
         qSort(index, right)
       }
     }
-    qSort(0,(xs.length - 1))
+    qSort(0,xs.length - 1)
 
     xs
   }

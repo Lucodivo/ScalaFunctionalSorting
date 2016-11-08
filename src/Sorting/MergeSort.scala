@@ -32,15 +32,15 @@ class MergeSort extends Sort {
     }
 
     def mSort(l: Int, r: Int): Unit ={
-      if(l < r){
+      if (l < r) {
         val m = l + ((r - l)/2)
-        mSort(l,m)
-        mSort((m+1),r)
-        merge(l,m,r)
+        mSort(l, m)
+        mSort(m + 1,r)
+        merge(l, m, r)
       }
     }
 
-    mSort(0,(xs.length - 1))
+    mSort(0,xs.length - 1)
 
     xs
   }
@@ -62,7 +62,7 @@ class MergeSort extends Sort {
               Array(ys.head) ++ merge(xs, ys.tail)
             }
       }
-      val (left, right) = xs splitAt(n)
+      val (left, right) = xs splitAt n
       merge(functionalSort(left), functionalSort(right))
     }
   }
