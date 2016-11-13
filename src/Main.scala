@@ -8,6 +8,8 @@ object Main {
     val unsorted1 = Array(62,27,97,26,14,13,3,46,79,17,81,36)
     val sorted1 = qs.functionalSort(unsorted1)
 
+    HelloWorld.printHelloWorld()
+
     println("Starting Array sorted with functional quicksort")
     printArray(unsorted1)
     printArray(sorted1)
