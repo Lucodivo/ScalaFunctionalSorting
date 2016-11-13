@@ -4,6 +4,7 @@ package sorting
   * @author Connor
   */
 class MergeSort extends Sort {
+
   override def imperativeSort(xs: Array[Int]): Array[Int] = {
     val tmpMergeArray = Array.fill(xs.length){0}
 

@@ -1,5 +1,6 @@
 import javacode.HelloWorld
 
+import companion.SomeClass
 import sorting.{MergeSort, QuickSort}
 
 /**
@@ -14,6 +15,7 @@ object Main extends Cloneable {
   val SEPARATOR = "=============================="
   val TAB = "\t"
   def main(args:Array[String]): Unit = {
+    SomeClass.printHelloWorld()
     HelloWorld.printHelloWorld()
 
     val unsorted = Array(62,27,97,26,14,13,3,46,79,17,81,36)
