@@ -1,4 +1,6 @@
-import Sorting.{MergeSort, QuickSort}
+import javacode.HelloWorld
+
+import sorting.{MergeSort, QuickSort}
 
 /**
   * Main Driver
@@ -12,6 +14,8 @@ object Main extends Cloneable {
   val SEPARATOR = "=============================="
   val TAB = "\t"
   def main(args:Array[String]): Unit = {
+    HelloWorld.printHelloWorld()
+
     val unsorted = Array(62,27,97,26,14,13,3,46,79,17,81,36)
 
     val qs = new QuickSort()
@@ -28,12 +32,12 @@ object Main extends Cloneable {
     println("Quick Sort")
     println(SEPARATOR)
 
-    println("original Array")
+    println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Functional Approach")
     println(quickFunctional.deep.mkString(TAB))
 
-    println("original Array")
+    println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Imperative Approach")
     println(quickImperative.deep.mkString(TAB))
@@ -42,12 +46,12 @@ object Main extends Cloneable {
     println("Merge Sort")
     println(SEPARATOR)
 
-    println("original Array")
+    println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Functional Approach")
     println(mergeFunctional.deep.mkString(TAB))
 
-    println("original Array")
+    println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Imperative Approach")
     println(mergeImperative.deep.mkString(TAB))

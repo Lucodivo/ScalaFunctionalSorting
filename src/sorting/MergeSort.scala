@@ -1,4 +1,4 @@
-package Sorting
+package sorting
 
 /**
   * @author Connor
@@ -53,9 +53,9 @@ class MergeSort extends Sort {
     else {
       def merge(xs: Array[Int], ys: Array[Int]) : Array[Int] =
         (xs,ys) match {
-        case(Array(), ys) => ys
-        case(xs, Array()) => xs
-        case(xs, ys) =>
+        case(Array(), `ys`) => ys
+        case(`xs`, Array()) => xs
+        case(`xs`, `ys`) =>
             if(xs.head < ys.head){
               Array(xs.head) ++ merge(xs.tail, ys)
             } else {
