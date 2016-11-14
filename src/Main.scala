@@ -2,6 +2,7 @@ import javacode.HelloWorld
 
 import companion.SomeClass
 import sorting.{MergeSort, QuickSort}
+import polymorphism.{Cat, Dog}
 
 /**
   * Main Driver
@@ -15,8 +16,7 @@ object Main extends Cloneable {
   val SEPARATOR = "=============================="
   val TAB = "\t"
   def main(args:Array[String]): Unit = {
-    SomeClass.printHelloWorld()
-    HelloWorld.printHelloWorld()
+    // otherExamples()
 
     val unsorted = Array(62,27,97,26,14,13,3,46,79,17,81,36)
 
@@ -58,5 +58,20 @@ object Main extends Cloneable {
     println("By Imperative Approach")
     println(mergeImperative.deep.mkString(TAB))
     println(SEPARATOR)
+  }
+
+  def otherExamples() : Unit = {
+    val dog = new Dog
+    val cat = new Cat
+    val animals = List(dog, cat)
+    for (animal <- animals) {
+      println(animal.makeSound)
+    }
+    println()
+    SomeClass.printHelloWorld()
+    println()
+    val hw = new HelloWorld()
+    hw.printHelloWorld()
+    println()
   }
 }
