@@ -1,7 +1,7 @@
 import javacode.HelloWorld
 
 import companion.SomeClass
-import sorting.{MergeSort, QuickSort}
+import sorting.{MergeSort, QuickSort, Sort}
 import polymorphism.{Cat, Dog}
 
 /**
@@ -20,24 +20,21 @@ object Main extends Cloneable {
 
     val unsorted = Array(62,27,97,26,14,13,3,46,79,17,81,36)
 
-    val qs = new QuickSort()
-    val quickFunctional = qs.functionalSort(Array.concat(unsorted))
-    val quickImperative = qs.imperativeSort(Array.concat(unsorted))
-
-    val ms = new MergeSort()
-    val mergeFunctional = ms.functionalSort(Array.concat(unsorted))
-    val mergeImperative = ms.imperativeSort(Array.concat(unsorted))
-
     println("Quick & Merge Sort by Functional & Imperative approaches")
     println(SEPARATOR)
 
     println("Quick Sort")
     println(SEPARATOR)
 
+    val qs = new QuickSort()
+    val quickFunctional = Sort.sort(unsorted, QuickSort.functionalSort)
+
     println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Functional Approach")
     println(quickFunctional.deep.mkString(TAB))
+
+    val quickImperative = qs.imperativeSort(Array.concat(unsorted))
 
     println("Original Array")
     println(unsorted.deep.mkString(TAB))
@@ -48,10 +45,15 @@ object Main extends Cloneable {
     println("Merge Sort")
     println(SEPARATOR)
 
+    val ms = new MergeSort()
+    val mergeFunctional = Sort.sort(unsorted, MergeSort.functionalSort)
+
     println("Original Array")
     println(unsorted.deep.mkString(TAB))
     println("By Functional Approach")
     println(mergeFunctional.deep.mkString(TAB))
+    
+    val mergeImperative = ms.imperativeSort(Array.concat(unsorted))
 
     println("Original Array")
     println(unsorted.deep.mkString(TAB))

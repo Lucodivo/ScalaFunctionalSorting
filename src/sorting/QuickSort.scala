@@ -45,8 +45,10 @@ class QuickSort extends Sort {
 
     xs
   }
+}
 
-  override def functionalSort(xs: Array[Int]): Array[Int] = {
+object QuickSort {
+  def functionalSort(xs: Array[Int]): Array[Int] = {
     if(xs.length <= 1) {
       xs
     } else {

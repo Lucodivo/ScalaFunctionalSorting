@@ -45,8 +45,9 @@ class MergeSort extends Sort {
 
     xs
   }
-
-  override def functionalSort(xs: Array[Int]): Array[Int] = {
+}
+object MergeSort {
+  def functionalSort(xs: Array[Int]): Array[Int] = {
     val n = xs.length / 2
     if (n == 0) {
       xs
@@ -54,15 +55,15 @@ class MergeSort extends Sort {
     else {
       def merge(xs: Array[Int], ys: Array[Int]) : Array[Int] =
         (xs,ys) match {
-        case(Array(), `ys`) => ys
-        case(`xs`, Array()) => xs
-        case(`xs`, `ys`) =>
+          case(Array(), `ys`) => ys
+          case(`xs`, Array()) => xs
+          case(`xs`, `ys`) =>
             if(xs.head < ys.head){
               Array(xs.head) ++ merge(xs.tail, ys)
             } else {
               Array(ys.head) ++ merge(xs, ys.tail)
             }
-      }
+        }
       val (left, right) = xs splitAt n
       merge(functionalSort(left), functionalSort(right))
     }
