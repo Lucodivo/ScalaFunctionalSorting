@@ -2,7 +2,6 @@ import javacode.HelloWorld
 
 import companion.SomeClass
 import sorting.{MergeSort, QuickSort, Sort}
-import polymorphism.{Cat, Dog}
 
 /**
   * Main Driver
@@ -63,15 +62,12 @@ object Main extends Cloneable {
   }
 
   def otherExamples() : Unit = {
-    val dog = new Dog
-    val cat = new Cat
-    val animals = List(dog, cat)
-    for (animal <- animals) {
-      println(animal.makeSound)
-    }
+    // java code
     println()
     SomeClass.printHelloWorld()
     println()
+
+    // companion object/static function
     val hw = new HelloWorld()
     hw.printHelloWorld()
     println()
